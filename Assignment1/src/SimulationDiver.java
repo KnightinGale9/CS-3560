@@ -46,7 +46,7 @@ public class SimulationDiver {
         test.addQuestion(1,Q2.copy());
         //all questions are created so push to all students
         test.pushQuestionToAllStudents();
-
+        //test if adding a student after the fact properly gives them the question
         test.addStudent("1000");
         studentsCreated.add(String.valueOf(1000));
 
