@@ -23,6 +23,7 @@ public class VotingServices {
         else
         {
             studentPresent.put(id, new Student(id));
+            this.pushQuestionToOneStudent(id);
             return 0;
         }
     }
@@ -64,6 +65,7 @@ public class VotingServices {
     public void pushQuestionToOneStudent(String ID)
     {
         studentPresent.get(ID).addQuestions(questions);
+
     }
     //setter method for student
     public void addStudentAnswer(String ID,int num,int ans)
@@ -97,7 +99,8 @@ public class VotingServices {
             }
 
         }
-        return statistics.toString();
+        String temp= String.format("Statistics for question %d\n\t ",num+1);
+        return temp+statistics.toString();
     }
 
 }

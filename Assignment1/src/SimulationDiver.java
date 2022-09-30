@@ -11,13 +11,14 @@ public class SimulationDiver {
         Set<String> studentsCreated = new HashSet<>();
         //created to automatically test all methods created everywhere else
         VotingServices test = new VotingServices();
-        for(int i=0;i<100;i++)
+        for(int i=0;i<rand.nextInt(100)+100;i++)
         {
             test.addStudent(String.valueOf(i));
             studentsCreated.add(String.valueOf(i));
         }
         //test if ID validation is working
-        test.removeStudent("101");
+        System.out.println("ID validation:");
+        test.removeStudent("200");
         test.addStudent("1");
         System.out.println();
         //create a single choice question
@@ -34,14 +35,22 @@ public class SimulationDiver {
         Q2.addAnswers("Actuators","Sensors");
         test.addQuestion(Q2.copy());
 
-        //reuse the Q1 to make a new question and show that passing a copy is important
+        //reuse the Q1 and Q2 to make a new question and show that passing a copy is important
         Q1 = new singleChoiceQuestion();
         Q1.changeQuestion("Is this assignment#1?");
         Q1.addAnswers("Yes","No");
         test.addQuestion(0,Q1.copy());
+        Q2 = new multipleChoiceQuestion();
+        Q2.changeQuestion("What are the different states of water?");
+        Q2.addAnswers("Solid","Liquid","Plasma","Air");
+        test.addQuestion(1,Q2.copy());
         //all questions are created so push to all students
         test.pushQuestionToAllStudents();
 
+        test.addStudent("1000");
+        studentsCreated.add(String.valueOf(1000));
+
+        System.out.printf("number of students answering questions: %d\n",studentsCreated.size());
         //automatic simulation of 100 students
         for (int i=0;i< test.questionSize();i++)
         {
