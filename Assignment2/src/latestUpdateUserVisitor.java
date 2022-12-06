@@ -33,7 +33,7 @@ public class latestUpdateUserVisitor implements Visitor{
 
     @Override
     public Object visitorValue() {
-        return latestUser.getName();
+        return latestUser.toString();
     }
 
 }

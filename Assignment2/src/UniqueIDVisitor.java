@@ -17,20 +17,16 @@ public class UniqueIDVisitor implements Visitor{
     public void visit(UserComposite node) {
         if(node.getChildCount()==0)
         {
-            if(node instanceof User)
+            if(valid.contains(node.toString()))
             {
-                if(valid.contains(((User) node).getName()))
-                {
-                    invalid.add(((User) node).getName());
-                }
-                else
-                {
-                    valid.add(((User) node).getName());
-                }
-                if(((User) node).getName().contains(" "))
-                {
-                    invalid.add(((User) node).getName());
-                }
+                invalid.add(node.toString());
+            }
+            else
+            {
+                valid.add(node.toString());
+            }
+            if((node.toString()).contains(" ")) {
+                invalid.add((node.toString()));
             }
         }
         else{
@@ -38,6 +34,18 @@ public class UniqueIDVisitor implements Visitor{
             {
                 visit((UserComposite) node.getChildAt(i));
             }
+            if(valid.contains(node.toString()))
+            {
+                invalid.add(node.toString());
+            }
+            else
+            {
+                valid.add(node.toString());
+            }
+            if((node.toString()).contains(" ")) {
+                invalid.add((node.toString()));
+            }
+
         }
     }
     @Override

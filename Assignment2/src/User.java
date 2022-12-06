@@ -34,10 +34,6 @@ public class User extends UserComposite implements Observer, Subject {
         timeline=new ArrayList<>();
         myTweets=new ArrayList<>();
     }
-    public String getName()
-    {
-        return name;
-    }
     //returns the myTweet array for the visitors to use
     public List<String> getTimeline()
     {

@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="248a80c3-05b0-4fd6-97d6-112b0ef33e42" name="Changes" comment="Assignment #2 - Mini Twitter">
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/UniqueIDVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/latestUpdateUserVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment2/src/AdminFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/AdminFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment2/src/FindUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/FindUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment2/src/TotalGroupVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/TotalGroupVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment2/src/TotalMessagesVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/TotalMessagesVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment2/src/TotalPositiveMessagesVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/TotalPositiveMessagesVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment2/src/TotalUserVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/TotalUserVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2/src/UniqueIDVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/UniqueIDVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment2/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment2/src/UserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/UserFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment2/src/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/Visitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2/src/UserComposite.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/UserComposite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2/src/UserGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/UserGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2/src/latestUpdateUserVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/latestUpdateUserVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS-3560.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CS-3560.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +59,7 @@
       <recent name="$PROJECT_DIR$/Assignment2/GUI" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.twitterSimulator">
+  <component name="RunManager" selected="Application.twitterSimulator (1)">
     <configuration name="CompositeDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="User.CompositeDriver" />
       <module name="Assignment2" />
@@ -91,6 +87,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="twitterSimulator (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="twitterSimulator" />
+      <module name="CS-3560" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="twitterSimulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="twitterSimulator" />
       <module name="Assignment2" />
@@ -100,6 +103,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.twitterSimulator (1)" />
         <item itemvalue="Application.twitterSimulator" />
         <item itemvalue="Application.adminConsole" />
         <item itemvalue="Application.SimulationDiver" />
@@ -280,5 +284,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CS_3560$SimulationDiver.ic" NAME="SimulationDiver Coverage Results" MODIFIED="1664408536565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/CS_3560$twitterSimulator.ic" NAME="twitterSimulator Coverage Results" MODIFIED="1670359535835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

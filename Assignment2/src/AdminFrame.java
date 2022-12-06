@@ -235,10 +235,10 @@ public class AdminFrame extends JFrame implements AdminBuilder {
                 }
             }
             catch(StringIndexOutOfBoundsException noUser){
-                System.out.println("No Users");
+
             }
             catch(NullPointerException noUser){
-                System.out.println("No Users");
+
             }
             catch(ArithmeticException math)
             {

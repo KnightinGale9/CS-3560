@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class UserGroup extends UserComposite {
     private String name;
-
+    private long creationTime;
     private Set<String> uniqueNames;
     //Constructor
     public UserGroup(String name)
@@ -14,6 +14,8 @@ public class UserGroup extends UserComposite {
         super.allowsChildren=true;
         super.setUserObject(this);
         this.name=name;
+        this.creationTime=System.currentTimeMillis();
+        System.out.println(String.format("Creation of UserGroup named %s at %s",name,creationTime));
         this.uniqueNames = new HashSet<>();
     }
     //Check if the UserGroup has the name already
@@ -29,6 +31,11 @@ public class UserGroup extends UserComposite {
     @Override
     public void accept(Visitor visitor) {
         visitor.visit(this);
+    }
+    @Override
+    public long getCreationTime()
+    {
+        return creationTime;
     }
     //ToString Method
     @Override
