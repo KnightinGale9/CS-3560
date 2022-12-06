@@ -28,7 +28,7 @@ public class TotalGroupVisitor implements Visitor{
     }
     //Return the groupNumber
     @Override
-    public int visitorValue() {
+    public Object visitorValue() {
         return groupNumber;
     }
 

@@ -1,9 +1,13 @@
-public class TotalUserVisitor implements Visitor{
-    private int userNumber;
+import java.util.HashMap;
+import java.util.List;
+
+public class latestUpdateUserVisitor implements Visitor{
+    long latestMessage;
+    User latestUser;
     //Constructor
-    public TotalUserVisitor()
+    public latestUpdateUserVisitor()
     {
-        userNumber=0;
+        latestMessage=0;
     }
     //Method to find all Users through recursion
     @Override
@@ -12,7 +16,11 @@ public class TotalUserVisitor implements Visitor{
         {
             if(node instanceof User)
             {
-                userNumber++;
+                if(((User) node).getLatestUpdateTime()>latestMessage)
+                {
+                    latestMessage=((User) node).getLatestUpdateTime();
+                    latestUser= (User) node;
+                }
             }
         }
         else{
@@ -22,8 +30,10 @@ public class TotalUserVisitor implements Visitor{
             }
         }
     }
+
     @Override
     public Object visitorValue() {
-        return userNumber;
+        return latestUser.getName();
     }
+
 }

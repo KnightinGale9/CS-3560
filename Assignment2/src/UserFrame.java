@@ -18,6 +18,8 @@ public class UserFrame extends JFrame implements ActionListener,Observer {
     private JTextField textUserField;
     private JButton addTweetButton;
     private JTextField textTweet;
+    private JLabel creationTime;
+    private JLabel latestUpdateTime;
     private DefaultTreeModel followRoot;
     private DefaultTreeModel newsFeedRoot;
     private final JTree followTree;
@@ -33,7 +35,12 @@ public class UserFrame extends JFrame implements ActionListener,Observer {
         this.setSize(500,800);
         this.setTitle(user+" view");
         this.setLayout(null);
-
+        this.creationTime= new JLabel(String.format("Creation Time: %s",user.getCreationTime()));
+        this.creationTime.setBounds(10,10,200,30);
+        this.add(creationTime);
+        this.latestUpdateTime = new JLabel(String.format("Latest Update Time: %s",user.getLatestUpdateTime()));
+        this.latestUpdateTime.setBounds(250,10,250,30);
+        this.add(latestUpdateTime);
         //Button and Textfield for User ID
         AddTextFieldButton userID = new AddTextFieldButton("Follow User",20,70);
         this.add(userID.getLabel());
@@ -90,6 +97,7 @@ public class UserFrame extends JFrame implements ActionListener,Observer {
         if(e.getSource() == addTweetButton)
         {
             user.setLatestMessage(textTweet.getText());
+            this.latestUpdateTime.setText(String.format("Latest Update Time: %s",user.getLatestUpdateTime()));
         }
     }
     //Visitor call for finding user

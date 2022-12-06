@@ -26,7 +26,7 @@ public class TotalMessagesVisitor implements Visitor{
     }
     //getter for totalMessages
     @Override
-    public int visitorValue() {
+    public Object visitorValue() {
         return totalMessages;
     }
 }

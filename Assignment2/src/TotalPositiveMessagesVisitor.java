@@ -39,7 +39,7 @@ public class TotalPositiveMessagesVisitor implements Visitor{
         }
     }
     @Override
-    public int visitorValue() {
+    public Object visitorValue() {
         return positiveMessages;
     }
 }

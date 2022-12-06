@@ -1,33 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="248a80c3-05b0-4fd6-97d6-112b0ef33e42" name="Changes" comment="Assignment #1">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment1/Assignment1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/Assignment2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/AddTextFieldButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/AdminBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/AdminFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/FindUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/TotalGroupVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/TotalMessagesVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/TotalPositiveMessagesVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/TotalUserVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/TreeBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/UserComposite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/UserFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/UserGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/Visitable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/Visitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment2/src/twitterSimulator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS-3560.iml" afterDir="false" />
+    <list default="true" id="248a80c3-05b0-4fd6-97d6-112b0ef33e42" name="Changes" comment="Assignment #2 - Mini Twitter">
+      <change afterPath="$PROJECT_DIR$/Assignment2/src/UniqueIDVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment2/src/latestUpdateUserVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2/src/AdminFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/AdminFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2/src/FindUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/FindUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2/src/TotalGroupVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/TotalGroupVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2/src/TotalMessagesVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/TotalMessagesVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2/src/TotalPositiveMessagesVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/TotalPositiveMessagesVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2/src/TotalUserVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/TotalUserVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2/src/UserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/UserFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2/src/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2/src/Visitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -143,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664513163915</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Assignment #2 - Mini Twitter">
+      <created>1668087232386</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668087232387</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,7 +152,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Assignment #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Assignment #1" />
+    <MESSAGE value="Assignment #2 - Mini Twitter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Assignment #2 - Mini Twitter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -201,7 +195,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Assignment2/src/User.java</url>
-          <line>54</line>
+          <line>72</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -216,38 +210,48 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Assignment2/src/User.java</url>
-          <line>88</line>
+          <line>106</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Assignment2/src/User.java</url>
-          <line>63</line>
+          <line>81</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Assignment2/src/UserFrame.java</url>
-          <line>84</line>
+          <line>91</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Assignment2/src/UserFrame.java</url>
-          <line>85</line>
+          <line>92</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Assignment2/src/AdminFrame.java</url>
-          <line>147</line>
+          <line>160</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Assignment2/src/AdminFrame.java</url>
-          <line>123</line>
+          <line>136</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Assignment2/src/User.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="50" />
+          <line>46</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Assignment2/src/User.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Assignment2/src/FindUser.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Assignment1/src/SimulationDiver.java</url>

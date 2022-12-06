@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class AdminFrame extends JFrame implements AdminBuilder {
     //Private Variable for Singleton
@@ -19,6 +20,8 @@ public class AdminFrame extends JFrame implements AdminBuilder {
     private JButton showTotalGroupsButton;
     private JButton showTotalMessagesButton;
     private JButton showTotalPositiveMessagesButton;
+    private JButton showInvalidID;
+    private JButton latestUserButton;
     private JTree tree;
     private UserGroup rootUser;
     private TreeBuilder root;
@@ -84,6 +87,15 @@ public class AdminFrame extends JFrame implements AdminBuilder {
         showTotalPositiveMessagesButton.setBounds(290,650,300,100);
         this.add(showTotalPositiveMessagesButton);
         showTotalPositiveMessagesButton.addActionListener(act);
+        showInvalidID=new JButton("Button - Show invalidID");
+        showInvalidID.setBounds(600,550,180,100);
+        this.add(showInvalidID);
+        showInvalidID.addActionListener(act);
+        latestUserButton=new JButton("Button - Show latestUser");
+        latestUserButton.setBounds(600,650,180,100);
+        this.add(latestUserButton);
+        latestUserButton.addActionListener(act);
+
         //Create a panel to output the visitor result
         visitorPanel=new JPanel(null);
         visitorPanel.setBackground(Color.WHITE);
@@ -110,97 +122,127 @@ public class AdminFrame extends JFrame implements AdminBuilder {
                 -add a user at the end of the UserGroup if the userGroup is selected on the tree
                 -add a user at the end of the root if nothing is selected
              */
-            if(e.getSource() == addUserButton)
-            {
-                Object test = tree.getLastSelectedPathComponent();
-//                System.out.println(test.toString());
-                if(test instanceof User) {
-                    root.addNode(new User(textFieldUserID.getText()),
-                            (UserComposite) ((User) test).getParent(),
-                            ((User) test).getParent().getIndex((UserComposite)test)+1);
-                }
-                else if(test instanceof UserGroup){
-                    root.addNode(new User(textFieldUserID.getText()),
-                            (UserGroup) test, ((UserGroup) test).getChildCount());
-                }
-                else
+            try{
+                if(e.getSource() == addUserButton)
                 {
-                    root.addNode(new User(textFieldUserID.getText()),
-                            rootUser,0);
-//                    System.out.println(textFieldUserID.getText());
+                    Object test = tree.getLastSelectedPathComponent();
+    //                System.out.println(test.toString());
+                    if(test instanceof User) {
+                        root.addNode(new User(textFieldUserID.getText()),
+                                (UserComposite) ((User) test).getParent(),
+                                ((User) test).getParent().getIndex((UserComposite)test)+1);
+                    }
+                    else if(test instanceof UserGroup){
+                        root.addNode(new User(textFieldUserID.getText()),
+                                (UserGroup) test, ((UserGroup) test).getChildCount());
+                    }
+                    else
+                    {
+                        root.addNode(new User(textFieldUserID.getText()),
+                                rootUser,0);
+    //                    System.out.println(textFieldUserID.getText());
+                    }
                 }
-            }
-            /*
-            Add User button will
-                -add a userGroup after the selected user if the user is selected on the tree
-                -add a userGroup at the end of the UserGroup if the userGroup is selected on the tree
-                -add a userGroup at the end of the root if nothing is selected
-             */
-            if(e.getSource() == addGroupButton) {
-                Object test = tree.getLastSelectedPathComponent();
-                if(test instanceof User) {
-                    root.addNode(new UserGroup(textFieldGroupID.getText()),
-                            (UserComposite) ((User) test).getParent(),
-                            ((User) test).getParent().getIndex((UserComposite)test)+1);
-//                    System.out.println(textFieldGroupID.getText());
+                /*
+                Add User button will
+                    -add a userGroup after the selected user if the user is selected on the tree
+                    -add a userGroup at the end of the UserGroup if the userGroup is selected on the tree
+                    -add a userGroup at the end of the root if nothing is selected
+                 */
+                if(e.getSource() == addGroupButton) {
+                    Object test = tree.getLastSelectedPathComponent();
+                    if(test instanceof User) {
+                        root.addNode(new UserGroup(textFieldGroupID.getText()),
+                                (UserComposite) ((User) test).getParent(),
+                                ((User) test).getParent().getIndex((UserComposite)test)+1);
+    //                    System.out.println(textFieldGroupID.getText());
+                    }
+                    else if(test instanceof UserGroup){
+                        root.addNode(new UserGroup(textFieldGroupID.getText()),
+                                (UserGroup) test, ((UserGroup) test).getChildCount());
+    //                    System.out.println(textFieldGroupID.getText());
+                    }
+                    else
+                    {
+                        root.addNode(new UserGroup(textFieldGroupID.getText()),
+                                rootUser,0);
+    //                    System.out.println(textFieldGroupID.getText());
+                    }
                 }
-                else if(test instanceof UserGroup){
-                    root.addNode(new UserGroup(textFieldGroupID.getText()),
-                            (UserGroup) test, ((UserGroup) test).getChildCount());
-//                    System.out.println(textFieldGroupID.getText());
-                }
-                else
+                //Open the User View if a user is selected
+                if(e.getSource() == openUserViewButton)
                 {
-                    root.addNode(new UserGroup(textFieldGroupID.getText()),
-                            rootUser,0);
-//                    System.out.println(textFieldGroupID.getText());
+                    Object test = tree.getLastSelectedPathComponent();
+                    if (test instanceof User)
+                    {
+                        UserFrame userFrame = new UserFrame(rootUser,(User)test);
+                    }
                 }
-            }
-            //Open the User View if a user is selected
-            if(e.getSource() == openUserViewButton)
-            {
-                Object test = tree.getLastSelectedPathComponent();
-                if (test instanceof User)
+
+                //Run the TotalUserVisitor and output the results
+                if(e.getSource() == showTotalUserButton)
                 {
-                    UserFrame userFrame = new UserFrame(rootUser,(User)test);
+                    Visitor group =new TotalUserVisitor();
+                    group.visit(rootUser);
+                    visitorLabel.setText("Total Users");
+                    visitorResult.setText(String.valueOf((int)group.visitorValue()));
+                }
+                //Run the TotalGroupVisitor and output the results
+                if(e.getSource() == showTotalGroupsButton)
+                {
+                    Visitor group =new TotalGroupVisitor();
+                    group.visit(rootUser);
+                    visitorLabel.setText("Total Groups");
+                    visitorResult.setText(String.valueOf((int)group.visitorValue()));
+                }
+                //Run the TotalMessagesVisitor and output the results
+                if(e.getSource() == showTotalMessagesButton)
+                {
+                    Visitor group =new TotalMessagesVisitor();
+                    group.visit(rootUser);
+                    visitorLabel.setText("# Messages");
+                    visitorResult.setText(String.valueOf((int)group.visitorValue()));
+                }
+                //Run the TotalPositiveMessagesVisitor and output the results
+                if(e.getSource() == showTotalPositiveMessagesButton)
+                {
+                    Visitor group =new TotalPositiveMessagesVisitor();
+                    group.visit(rootUser);
+
+                    Visitor count =new TotalMessagesVisitor();
+                    count.visit(rootUser);
+
+                    visitorLabel.setText("# Positive Percent");
+                    visitorResult.setText(String.valueOf(Double.valueOf((int)group.visitorValue()/(int)count.visitorValue())));
+                }
+                if(e.getSource() == showInvalidID)
+                {
+                    Visitor group = new UniqueIDVisitor();
+                    group.visit(rootUser);
+                    visitorResult.setText("");
+                    visitorLabel.setText("InvalidID");
+                    System.out.println("InvalidID are " + (String)group.visitorValue());
+                    visitorResult.setText((String)group.visitorValue());
+                }
+                if(e.getSource() == latestUserButton)
+                {
+                    Visitor group = new latestUpdateUserVisitor();
+                    group.visit(rootUser);
+                    visitorResult.setText("");
+                    visitorLabel.setText("LatestUser");
+                    System.out.println("LatestUser is " + (String)group.visitorValue());
+                    visitorResult.setText((String)group.visitorValue());
                 }
             }
-
-            //Run the TotalUserVisitor and output the results
-            if(e.getSource() == showTotalUserButton)
-            {
-                Visitor group =new TotalUserVisitor();
-                group.visit(rootUser);
-                visitorLabel.setText("Total Users");
-                visitorResult.setText(String.valueOf((int)group.visitorValue()));
+            catch(StringIndexOutOfBoundsException noUser){
+                System.out.println("No Users");
             }
-            //Run the TotalGroupVisitor and output the results
-            if(e.getSource() == showTotalGroupsButton)
-            {
-                Visitor group =new TotalGroupVisitor();
-                group.visit(rootUser);
-                visitorLabel.setText("Total Groups");
-                visitorResult.setText(String.valueOf((int)group.visitorValue()));
+            catch(NullPointerException noUser){
+                System.out.println("No Users");
             }
-            //Run the TotalMessagesVisitor and output the results
-            if(e.getSource() == showTotalMessagesButton)
+            catch(ArithmeticException math)
             {
-                Visitor group =new TotalMessagesVisitor();
-                group.visit(rootUser);
-                visitorLabel.setText("# Messages");
-                visitorResult.setText(String.valueOf((int)group.visitorValue()));
-            }
-            //Run the TotalPositiveMessagesVisitor and output the results
-            if(e.getSource() == showTotalPositiveMessagesButton)
-            {
-                Visitor group =new TotalPositiveMessagesVisitor();
-                group.visit(rootUser);
-
-                Visitor count =new TotalMessagesVisitor();
-                count.visit(rootUser);
-
-                visitorLabel.setText("# Positive Percent");
-                visitorResult.setText(String.valueOf((double)group.visitorValue()/count.visitorValue()));
+                System.out.println("No Messages");
             }
         }
     }

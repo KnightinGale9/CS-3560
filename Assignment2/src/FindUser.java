@@ -32,7 +32,7 @@ public class FindUser implements Visitor{
         return user;
     }
     @Override
-    public int visitorValue() {
+    public Object visitorValue() {
         return 0;
     }
 }
